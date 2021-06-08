@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+<title>flipper</title>
+<style>
+    *
+    {
+        box-sizing: border-box;
+    }
+    body{
+        background-color: #f2f8fe;
+        margin:0px;
+        height: 100%;
+    }
+    .navbar
+    {
+       padding-top: auto;
+       padding-bottom: auto;
+       background-color: black;
+       width: 100%;
+       margin-top: 0px;
+       color: aliceblue;
+       display: flex;
+       justify-content: center;
+       padding: 2em;
+
+    }
+    .navbar-1
+    {
+        
+        display: flex;
+        justify-content: space-between;
+        width:30%;
+    
+    }
+   a{
+       text-decoration: none;
+      letter-spacing: 5px;
+      font-weight: bold;
+   }
+  .container
+  {
+      
+     
+      margin-left: auto;
+      margin-right: auto;
+      width:40%;
+      padding: 2em;
+      text-align: center; 
+      display: flex;
+      margin-top: 10%;
+      margin-bottom: 10%;
+      align-items: center; 
+      flex-direction: column;
+  }
+  .hexcolor
+  {
+      width: 100%;
+      background-color: black;
+  }  
+  #btn {
+  background-color:#f2f8fe;
+  border: 1px solid black;
+  color: black;
+  padding: 15px 32px;
+  margin-top: 30px;
+  text-align: center;
+  text-decoration: none;
+   font-size: 16px;
+   font-weight: bolder;
+   border-radius: 16px;
+}  
+</style>
+</head>
+<body>
+
+<div class="container">
+   <div class="hexcolor">
+       <h1 style="color: white;letter-spacing: 3px;">Background Color:<span style="color: cornflowerblue;" class="color">#567890</span></h1>
+   </div>
+   <button id="btn">click me</button>
+</div>
+<script>
+    const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+        const btn = document.getElementById("btn");
+        const color = document.querySelector(".color");
+
+        btn.addEventListener("click", function () {
+            let hexColor = "#";
+            for (let i = 0; i < 6; i++) {
+                hexColor += hex[getRandomNumber()];
+            }
+
+            color.textContent = hexColor;
+            document.body.style.backgroundColor = hexColor;
+        });
+
+        function getRandomNumber() {
+            return Math.floor(Math.random() * hex.length);
+        }
+</script>
+</body>
+</html>
